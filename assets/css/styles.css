@@ -1,0 +1,95 @@
+/* ============================================================
+   WayТехно — главная страница
+   Techno-premium landing: dark base, electric-blue accent.
+   ============================================================ */
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:#08090b;
+  color:#f5f7fa;
+  font-family:'Manrope',sans-serif;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+::selection{background:rgba(47,107,255,.35);color:#fff}
+a{color:inherit;text-decoration:none}
+img{display:block}
+
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-thumb{background:#23262c;border-radius:8px}
+::-webkit-scrollbar-track{background:#0b0c0e}
+
+/* ---- Keyframes ---- */
+@keyframes wt-grid{from{background-position:0 0,0 0}to{background-position:64px 64px,64px 64px}}
+@keyframes wt-glow{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:.85}50%{transform:translate(-50%,-50%) scale(1.18);opacity:1}}
+@keyframes wt-scan{0%{transform:translateY(-120%)}100%{transform:translateY(820%)}}
+@keyframes wt-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes wt-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes wt-spin{to{transform:rotate(360deg)}}
+@keyframes wt-dot{0%,100%{opacity:.35}50%{opacity:1}}
+@keyframes wt-arrow{0%,100%{transform:translateX(0)}50%{transform:translateX(5px)}}
+
+/* ============================================================
+   Hover states (ported from the prototype's style-hover)
+   ============================================================ */
+
+/* Nav */
+.wt-navlinks a{transition:color .2s}
+.wt-navlinks a:hover{color:#fff}
+.wt-phone:hover{color:#fff}
+.wt-cta-btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(47,107,255,.5)}
+
+/* Hero fork cards */
+.wt-fork:hover{
+  border-color:rgba(47,107,255,.6);
+  background:rgba(47,107,255,.08);
+  box-shadow:0 20px 50px rgba(47,107,255,.18);
+}
+
+/* Catalog cards */
+.wt-card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(47,107,255,.4);
+  box-shadow:0 22px 50px rgba(0,0,0,.5);
+}
+
+/* Section "see all" links */
+.wt-link:hover{color:#2f6bff;border-color:#2f6bff}
+
+/* Repair service rows */
+.wt-serv:hover{
+  border-color:rgba(47,107,255,.4);
+  background:rgba(47,107,255,.05);
+  transform:translateX(4px);
+}
+.wt-serv-cta:hover{transform:translateY(-3px);box-shadow:0 20px 50px rgba(47,107,255,.5)}
+
+/* Messenger buttons */
+.wt-msg-primary:hover{transform:translateY(-2px);box-shadow:0 12px 34px rgba(47,107,255,.5)}
+.wt-msg-outline:hover{
+  transform:translateY(-2px);
+  border-color:rgba(47,107,255,.5);
+  background:rgba(47,107,255,.08);
+}
+
+/* Footer links */
+.wt-foot-link{transition:color .2s}
+.wt-foot-link:hover{color:#fff}
+
+/* ============================================================
+   Responsive guards (mobile-first intent — desktop unchanged)
+   ============================================================ */
+@media (max-width:860px){
+  .wt-navlinks{display:none !important}
+}
+@media (max-width:600px){
+  .wt-phone{display:none !important}
+}
+
+/* ---- Reduced motion ---- */
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms !important;animation-iteration-count:1 !important}
+  html{scroll-behavior:auto}
+}
